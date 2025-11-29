@@ -1,15 +1,12 @@
-
-/* Your CSS Code here. */
 .wrapper {
-  position: relative;
   display: flex;
   gap: 20px;
 }
 
 .speed {
-  background: #eee;
-  width: 50px;
+  width: 60px;
   height: 430px;
+  background: #eee;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -20,9 +17,9 @@
 .speed-bar {
   width: 100%;
   background: #00bcd4;
-  text-align: center;
   color: white;
+  text-align: center;
+  font-weight: bold;
   padding: 5px 0;
   height: 16%;
-  font-weight: bold;
 }
