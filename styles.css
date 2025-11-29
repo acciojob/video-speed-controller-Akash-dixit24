@@ -1,2 +1,28 @@
 
 /* Your CSS Code here. */
+.wrapper {
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+
+.speed {
+  background: #eee;
+  width: 50px;
+  height: 430px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+}
+
+.speed-bar {
+  width: 100%;
+  background: #00bcd4;
+  text-align: center;
+  color: white;
+  padding: 5px 0;
+  height: 16%;
+  font-weight: bold;
+}
