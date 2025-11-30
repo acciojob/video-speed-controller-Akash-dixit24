@@ -3,7 +3,7 @@ const bar = document.querySelector('.speed-bar');
 const video = document.querySelector('video');
 
 speed.addEventListener('mousemove', function (e) {
-  const y = e.pageY - this.offsetTop;
+  const y = e.pageY - this.getBoundingClientRect().top;
   const percent = Math.min(Math.max(y / this.offsetHeight, 0), 1);
 
   const min = 0.4;
@@ -15,3 +15,4 @@ speed.addEventListener('mousemove', function (e) {
 
   video.playbackRate = playbackRate;
 });
+
