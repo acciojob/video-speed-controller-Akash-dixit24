@@ -2,17 +2,20 @@ const speed = document.querySelector('.speed');
 const bar = document.querySelector('.speed-bar');
 const video = document.querySelector('video');
 
-speed.addEventListener('mousemove', function (e) {
-  const y = e.pageY - this.getBoundingClientRect().top;
-  const percent = Math.min(Math.max(y / this.offsetHeight, 0), 1);
+function handleMove(e) {
+    const y = e.offsetY;
+    const percent = y / speed.offsetHeight;
 
-  const min = 0.4;
-  const max = 4;
-  const playbackRate = percent * (max - min) + min;
+    const min = 0.4;
+    const max = 4;
 
-  bar.style.height = `${percent * 100}%`;
-  bar.textContent = playbackRate.toFixed(2) + '×';
+    const height = Math.round(percent * 100) + '%';
+    const playbackRate = percent * (max - min) + min;
 
-  video.playbackRate = playbackRate;
-});
+    bar.style.height = height;
+    bar.textContent = playbackRate.toFixed(2) + '×';
 
+    video.playbackRate = playbackRate;
+}
+
+speed.addEventListener('mousemove', handleMove);
